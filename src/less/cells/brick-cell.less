@@ -1,0 +1,63 @@
+.brick-cell {
+	width: 216px;
+	height: 180px;
+	
+	@media all and (min-width: 413px) {
+		width: 242px;
+		height: 198px;
+	}
+	
+	@media all and (min-width: 767px) and (orientation: portrait) {
+		width: 213px;
+		height: 180px;
+	}
+	
+	@media all and (min-width: 1023px) and (orientation: landscape) {
+		width: 213px;
+		height: 180px;
+	}
+	
+	@media all and (min-width: 833px) and (orientation: portrait) {
+		width: 234px;
+		height: 193px;
+	}
+	
+	@media all and (min-width: 1111px) and (orientation: landscape) {
+		width: 234px;
+		height: 193px;
+	}
+	
+	@media all and (min-width: 1024px) and (orientation: portrait) {
+		width: 213px;
+		height: 180px;
+	}
+	
+	@media all and (min-width: 1111px) and (orientation: landscape) {
+		width: 213px;
+		height: 180px;
+	}
+	
+	.artwork-view {
+		position: relative;
+		width: 100%;
+		
+		&:before {
+			content: '';
+			display: block;
+			padding-top: 63.88888%;
+		}
+		
+		.shadow-view,
+		img,
+		.border-view {
+			border-radius: 5px;
+		}
+	}
+	
+	.short-description-label {
+		margin-top: 8px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}

@@ -1,0 +1,59 @@
+button {
+	cursor: pointer;
+	
+	&:active {
+		transition-duration: 0 !important;
+	}
+	
+	&.offer-button {
+		min-width: 75px;
+		height: 30px;
+		border-radius: 15px;
+		margin: 16px 0;
+		margin-left: 10px;
+		font-weight: 600;
+		color: #007AFF;
+		background-color: #F0F0F7;
+		text-transform: uppercase;
+		transition: background-color .4s, color .4s;
+		
+		&.update {
+			padding: 0 13px;
+			font-size: 13px;
+		}
+		
+		&:active {
+			color: #004999;
+			background-color: #909094
+		}
+		
+		&:disabled {
+			pointer-events: none;
+			opacity: 0.56;
+		}
+	}
+	
+	&.titled-button {
+		width: 100%;
+		border-radius: 10px;
+		font-size: 17px;
+		font-weight: 500;
+		padding: 11px 0;
+		color: var(--accent-color);
+		background-color: #F0F0F7;
+		transition: color .4s;
+		
+		& + & {
+			margin-top: 10px;
+		}
+		
+		&:active {
+			color: fade(#007AFF, 22%);
+		}
+		
+		&:disabled {
+			pointer-events: none;
+			color: #5E5F5E;
+		}
+	}
+}

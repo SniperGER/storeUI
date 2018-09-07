@@ -1,0 +1,232 @@
+doctype html
+html
+	head
+		title Team FESTIVAL
+		
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0")
+		
+		link(rel="stylesheet", href="../../lib/css/swiper.min.css")
+		link(rel="stylesheet", href="../css/storeUI-1.0.css")
+	body
+		.collection-view
+			.horizontal-collection-view-cell.swiper-container#editorialCard
+				.swiper-wrapper
+					each _ in Array(6)
+						.editorial-card.swiper-slide
+							p.caption-label Header
+							p.title-label App Name
+							p.subtitle-label App Description
+							
+							.artwork-view
+								.shadow-view
+								img(src="https://via.placeholder.com/384x247")
+								.border-view
+			.title-header-view
+				p.title-label Small Lockup
+				a.header-button(href="#") Header Button
+				
+			.horizontal-collection-view-cell.swiper-container.margin-bottom#smallLockup
+				.swiper-wrapper
+					each _ in Array(15)
+						.small-lockup-cell.swiper-slide
+							.artwork-view
+								.shadow-view
+								img(src="https://via.placeholder.com/62x62")
+								.border-view
+							.title-container
+								h4 App Name
+								h6 App Description
+							button.offer-button Get
+			
+			.title-header-view
+				p.title-label Medium Lockup
+			
+			.horizontal-collection-view-cell.swiper-container.margin-bottom#mediumLockup
+				.swiper-wrapper
+					each _ in Array(8)
+						.medium-lockup-cell.swiper-slide
+							.artwork-view
+								.shadow-view
+								img(src="https://via.placeholder.com/62x62")
+								.border-view
+							.title-container
+								h4 App Name
+								h6 App Description
+							button.offer-button Get
+			
+			.title-header-view
+				p.title-label Brick
+			
+			.horizontal-collection-view-cell.swiper-container.margin-bottom#brick
+				.swiper-wrapper
+					each _ in Array(6)
+						.brick-cell.swiper-slide
+							.artwork-view
+								.shadow-view
+								img(src="https://via.placeholder.com/242x155")
+								.border-view
+							p.short-description-label App Description
+			
+			.title-header-view
+				p.title-label Sticker Pack
+			
+			.horizontal-collection-view-cell.swiper-container.margin-bottom#stickerPack
+				.swiper-wrapper
+					each _ in Array(15)
+						.small-lockup-cell.sticker-pack.swiper-slide
+							.artwork-view
+								.shadow-view
+								img(src="https://via.placeholder.com/62x62")
+								.border-view
+							.title-container
+								h4 App Name
+								h6 App Description
+							button.offer-button Get
+			
+			.title-header-view
+				p.title-label Action Cells
+			
+			each _ in Array(3)
+				.action-cell
+					p.text-label Action Cell
+			
+			each _,i in Array(3)
+				.action-cell.icon(class=i > 1 && "margin-bottom")
+					.artwork-view
+						.shadow-view
+						img(src="https://via.placeholder.com/22x22")
+						.border-view
+					p.text-label Action Cell
+			
+			.title-header-view
+				p.title-label Titled Buttons
+			
+			.titled-button-stack.margin-bottom
+				button.titled-button Button
+				button.titled-button(disabled) Disabled
+				
+		script(src="../../lib/js/swiper.min.js")
+		script.
+			let swipers = {};
+			let swiperConstructors = [{
+				id: "editorialCard",
+				options: {
+					roundLengths : 'false',
+					slidesPerView :'auto',
+					slidesPerViewFit : false,
+					spaceBetween: 32,
+					breakpoints: {
+						414: {
+							spaceBetween: 10
+						},
+						768: {
+							spaceBetween: 20
+						},
+						834: {
+							spaceBetween: 22
+						},
+						1024: {
+							spaceBetween: 30
+						}
+					}
+				}
+			}, {
+				id: "smallLockup",
+				options: {
+					roundLengths: 'false',
+					slidesPerView: 'auto',
+					slidesPerColumn: 3,
+					slidesPerGroup: 1,
+					spaceBetween: 32,
+					breakpoints: {
+						414: {
+							spaceBetween: 10,
+							slidesPerView: 1
+						},
+						768: {
+							spaceBetween: 20
+						},
+						834: {
+							spaceBetween: 22
+						},
+						1024: {
+							spaceBetween: 30
+						}
+					}
+				}
+			}, {
+				id: "mediumLockup",
+				options: {
+					roundLengths: 'false',
+					slidesPerView: 'auto',
+					slidesPerColumn: 2,
+					slidesPerGroup: 1,
+					spaceBetween: 32,
+					breakpoints: {
+						414: {
+							spaceBetween: 10,
+							slidesPerView: 1
+						},
+						768: {
+							spaceBetween: 20
+						},
+						834: {
+							spaceBetween: 22
+						},
+						1024: {
+							spaceBetween: 30
+						}
+					}
+				}
+			}, {
+				id: "brick",
+				options: {
+					roundLengths : 'false',
+					slidesPerView :'auto',
+					slidesPerViewFit : false,
+					spaceBetween: 32,
+					breakpoints: {
+						414: {
+							spaceBetween: 10
+						},
+						768: {
+							spaceBetween: 20
+						},
+						834: {
+							spaceBetween: 22
+						},
+						1024: {
+							spaceBetween: 30
+						}
+					}
+				}
+			}, {
+				id: "stickerPack",
+				options: {
+					roundLengths: 'false',
+					slidesPerView: 'auto',
+					slidesPerColumn: 3,
+					slidesPerGroup: 1,
+					spaceBetween: 32,
+					breakpoints: {
+						414: {
+							spaceBetween: 10,
+							slidesPerView: 1
+						},
+						768: {
+							spaceBetween: 20
+						},
+						834: {
+							spaceBetween: 22
+						},
+						1024: {
+							spaceBetween: 30
+						}
+					}
+				}
+			}];
+			
+			swiperConstructors.forEach(item => {
+				swipers[item["id"]] = new Swiper(document.getElementById(item["id"]), item["options"]);
+			});

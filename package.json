@@ -1,0 +1,30 @@
+{
+  "name": "storeui",
+  "version": "1.0.0",
+  "buildVersion": "1.0",
+  "buildNumber": "1",
+  "buildRevision": "20",
+  "description": "HTML/CSS framework for creating App Store-like user interfaces",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SniperGER/storeUI.git"
+  },
+  "author": "SniperGER",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/SniperGER/storeUI/issues"
+  },
+  "homepage": "https://github.com/SniperGER/storeUI#readme",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-build-number": "^1.0.0",
+    "grunt-contrib-less": "^2.0.0",
+    "grunt-contrib-pug": "^1.0.0",
+    "grunt-modify-json": "^0.1.3",
+    "grunt-text-replace": "^0.4.0"
+  }
+}

@@ -1,0 +1,86 @@
+@import "_mixins";
+
+.collection-view {
+	display: flex;
+	flex-direction: column;
+	
+	.title-header-view {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		
+		.padding();
+		padding-top: 11px;
+		padding-bottom: 11px;
+		
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 20px;
+			right: 20px;
+			height: 1px;
+			background-color: var(--cell-separator);
+			
+			.separatorPosition();
+		}
+		
+		.title-label {
+			font-size: 22px;
+			font-weight: 600;
+			max-width: 50%; /* Rework for iPad */
+		}
+		
+		.header-button {
+			font-size: 17px;
+			text-decoration: none;
+			color: var(--accent-color);
+			transition: opacity .4s;
+			max-width: 50%; /* Rework for iPad */
+			
+			&:active {
+				transition-duration: 0;
+				opacity: 0.22;
+			}
+		}
+	}
+	
+	.horizontal-collection-view-cell {
+		width: 100%;
+		.padding();
+		
+		&.margin-bottom {
+			margin-bottom: 32px;
+		}
+		
+		.editorial-card,
+		.small-lockup-cell,
+		.medium-lockup-cell {
+			.width();
+		}
+	}
+	
+	.titled-button-stack {
+		padding: 0 20px;
+		
+		@media all and (min-width: 767px) and (orientation: portrait) {
+			padding: 0 34px;
+		}
+		
+		@media all and (min-width: 833px) and (orientation: portrait) {
+			padding: 0 32px;
+		}
+		
+		@media all and (min-width: 1024px) and (orientation: landscape) {
+			padding: 0 52px;
+		}
+		
+		@media all and (min-width: 1365px) and (orientation: landscape) {
+			padding: 0 51px;
+		}
+		
+		&.margin-bottom {
+			margin-bottom: 32px;
+		}
+	}
+}
