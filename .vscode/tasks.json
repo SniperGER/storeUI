@@ -19,7 +19,16 @@
 			"task": "build",
 			"presentation": {
 				"reveal": "never"
-			}
+			},
+			"problemMatcher": []
+		},
+		{
+			"type": "grunt",
+			"task": "dist",
+			"presentation": {
+				"reveal": "never"
+			},
+			"problemMatcher": []
 		}
 	]
 }

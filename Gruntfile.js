@@ -12,23 +12,36 @@ const lessFiles = [
 	"src/less/collection-view.less",
 ];
 
-const jadeFiles = {
-	"build/demo/index.html": "src/html/index.jade"
-};
-
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		banner: "/**" + 
+		" * storeUI 1.0 ({{buildVersion}}.{{buildNumber}}.{{buildRevision}}_{{buildBranch}}.{{buildDate}})" + 
+		" * HTML/CSS framework for creating App Store-like user interfaces" +
+		" * Copyright © 2018 Team FESTIVAL" +
+		" */",
+		
 		pug: {
-			compile: {
-				options: {
-					pretty: "\t",
-					data: {
-						debug: false,
-						pretty: "\t"
-					}
-				},
-				files: jadeFiles
+			options: {
+				pretty: "\t",
+				data: {
+					debug: false,
+					pretty: "\t"
+				}
+			},
+			build: {
+				expand: true,
+				cwd: 'src/html/',
+				src: ['*.jade'],
+				dest: 'build/demo',
+				ext: '.html'
+			},
+			dist: {
+				expand: true,
+				cwd: 'src/html/',
+				src: ['*.jade'],
+				dest: 'dist/demo',
+				ext: '.html'
 			}
 		},
 		less: {
@@ -36,8 +49,21 @@ module.exports = function(grunt) {
 				javascriptEnabled: true
 			},
 			build: {
+				options: {
+					cleancss: false,
+					compress: false
+				},
 				files: {
 					"build/css/storeUI-<%= pkg.buildVersion %>.css": lessFiles
+				}
+			},
+			dist: {
+				options: {
+					cleancss: true,
+					compress: true,
+				},
+				files: {
+					"dist/css/storeUI-<%= pkg.buildVersion %>.min.css": lessFiles
 				}
 			}
 		},
@@ -92,6 +118,9 @@ module.exports = function(grunt) {
 					}
 				]
 			},
+			dist: {
+				src: ["dist/css/storeUI-<%= pkg.buildVersion %>.css"],
+			}
 		}
 	});
 	
@@ -104,20 +133,26 @@ module.exports = function(grunt) {
 	// grunt.registerTask('default', ['pug', 'less']);
 	grunt.registerTask('default', ["build"]);
 	grunt.registerTask('build', [
-		'modify_json',
-		'buildnumber:build',
+		//'modify_json',
+		//'buildnumber:build',
 		'readpkg',
 		'less:build',
-		'pug',
+		'pug:build',
 		'replace:build'
 	]);
 	
 	grunt.registerTask('revision', [
-		'buildnumber:revision',
+		//'buildnumber:revision',
 		'readpkg',
 		'less:build',
-		'pug',
+		'pug:build',
 		'replace:build'
+	]);
+	
+	grunt.registerTask('dist', [
+		'readpkg',
+		'less:dist',
+		'pug:dist'
 	]);
 	
 	grunt.registerTask('readpkg', function() {

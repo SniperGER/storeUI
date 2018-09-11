@@ -22,4 +22,26 @@ storeUI uses iDangerous' Swiper for natural feeling paginated scrolling.
 
 ## Getting Started
 
+* Clone this repository
+* Build your app either using the demo pages in `dist/demo` or start from scratch
+
+## Build
+
+storeUI is built using `grunt`. To build storeUI, you need to install the Grunt CLI globally
+
+```
+npm install -g grunt-cli
+```
+
+Then, `cd` into the project root, install all the dependencies and build the project.
+
+```
+npm install
+grunt build
+```
+
+You'll find the build output in the `build` directory.
+
+## Documentation
+
 _Developing..._
