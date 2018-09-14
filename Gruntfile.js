@@ -8,6 +8,7 @@ const lessFiles = [
 	"src/less/cells/medium-lockup-cell.less",
 	"src/less/cells/brick-cell.less",
 	"src/less/cells/action-cell.less",
+	"src/less/cells/product-lockup-cell.less",
 	
 	"src/less/collection-view.less",
 ];
@@ -133,8 +134,8 @@ module.exports = function(grunt) {
 	// grunt.registerTask('default', ['pug', 'less']);
 	grunt.registerTask('default', ["build"]);
 	grunt.registerTask('build', [
-		//'modify_json',
-		//'buildnumber:build',
+		'modify_json',
+		'buildnumber:build',
 		'readpkg',
 		'less:build',
 		'pug:build',
@@ -142,7 +143,7 @@ module.exports = function(grunt) {
 	]);
 	
 	grunt.registerTask('revision', [
-		//'buildnumber:revision',
+		'buildnumber:revision',
 		'readpkg',
 		'less:build',
 		'pug:build',

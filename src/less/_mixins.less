@@ -12,7 +12,7 @@
 		padding-right: 32px;
 	}
 	
-	@media all and (min-width: 1024px) and (orientation: landscape) {
+	@media all and (min-width: 1023px) and (orientation: landscape) {
 		padding-left: 52px;
 		padding-right: 52px;
 	}
@@ -34,7 +34,7 @@
 		right: 32px;
 	}
 	
-	@media all and (min-width: 1024px) and (orientation: landscape) {
+	@media all and (min-width: 1023px) and (orientation: landscape) {
 		left: 52px;
 		right: 52px;
 	}
@@ -69,4 +69,9 @@
 	@media all and (min-width: 1365px) and (orientation: landscape) {
 		width: 344px;
 	}
+}
+
+.encoded-svg-background(@svg) {
+	@url: `encodeURIComponent(@{svg})`;
+	background-image: url("data:image/svg+xml;charset=utf-8,@{url}");
 }
