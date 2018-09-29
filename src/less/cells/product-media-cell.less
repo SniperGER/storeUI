@@ -25,7 +25,20 @@
 		&:before {
 			content: '';
 			display: block;
-			height: calc(~"(100vw * (220 / 375)) * (667/375)");
+			height: calc(~"(100vw * (220 / 375)) * (667 / 375)");
+		}
+		
+		@media all and (min-width: 1023px) and (orientation: landscape) {
+			width: auto;
+			height: calc(~"100vh * (304 / 1024)");
+			
+			&:before {
+				width: calc(~"(100vh * (304 / 1024)) * (1024 / 1366)")
+			}
+			
+			&.landscape:before {
+				width: calc(~"(100vh * (304 / 1024)) * (1366 / 1024)")
+			}
 		}
 		
 		.artwork-view {
