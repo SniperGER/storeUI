@@ -22,17 +22,44 @@ html
 				button.offer-button Get
 				
 				.product-lockup-badge-stack
-					.badge-view.no-padding
-						//- p.value-label 3,9
-						//- .review-rating-view
-						//- 	each _ in Array(5)
-						//- 		.review-rating-star-wrapper
-						//- 			.background-fill(style="width: 16px")
-						//- 			.review-rating-star
-						//- p.caption-label 9 Wertungen
-						.review-rating-view.not-enough-ratings
-						p.caption-label Zu wenig Wertungen
+					.badge-view
+						p.value-label 3,9
+						.review-rating-view
+							each _ in Array(5)
+								.review-rating-star-wrapper
+									.background-fill(style="width: 16px")
+									.review-rating-star
+						p.caption-label 9 Wertungen
+					//- .badge-view.no-padding
+					//- 	.review-rating-view.not-enough-ratings
+					//- 	p.caption-label Zu wenig Wertungen
 						
 					.badge-view
 						p.value-label 1.000
 						p.caption-label Downloads
+			
+			.product-media-cell.swiper-container#productMedia
+				.swiper-wrapper
+					each _ in Array(4)
+						.screenshot-cell.swiper-slide
+							.artwork-view
+								.shadow-view
+								img(src="https://via.placeholder.com/414x736")
+								.border-view
+						
+		script(src="../../lib/js/swiper.min.js")
+		script.
+			let swipers = {};
+			let swiperConstructors = [{
+				id: "productMedia",
+				options: {
+					roundLengths : 'false',
+					slidesPerView :'auto',
+					slidesPerViewFit : false,
+					spaceBetween: 10,
+				}
+			}];
+			
+			swiperConstructors.forEach(item => {
+				swipers[item["id"]] = new Swiper(document.getElementById(item["id"]), item["options"]);
+			});

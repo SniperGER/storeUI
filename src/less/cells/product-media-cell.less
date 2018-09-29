@@ -1,0 +1,45 @@
+@import "../_mixins";
+
+.product-media-cell {
+	position: relative;
+	width: 100%;
+	.padding();
+	padding-bottom: 32px;
+	
+	&:after {
+		content: '';
+		position: absolute;
+		left: 20px;
+		right: 20px;
+		bottom: 16px;
+		height: 1px;
+		background-color: var(--cell-separator);
+		
+		.separatorPosition();
+	}
+	
+	.screenshot-cell {
+		position: relative;
+		width: calc(~"100vw * (220 / 375)");
+		
+		&:before {
+			content: '';
+			display: block;
+			height: calc(~"(100vw * (220 / 375)) * (667/375)");
+		}
+		
+		.artwork-view {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			
+			.shadow-view,
+			img,
+			.border-view {
+				border-radius: 5px;
+			}
+		}
+	}
+}

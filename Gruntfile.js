@@ -9,6 +9,7 @@ const lessFiles = [
 	"src/less/cells/brick-cell.less",
 	"src/less/cells/action-cell.less",
 	"src/less/cells/product-lockup-cell.less",
+	"src/less/cells/product-media-cell.less",
 	
 	"src/less/collection-view.less",
 ];
