@@ -1,0 +1,125 @@
+@import "../_mixins";
+
+.product-rating-cell {
+	position: relative;
+	width: 100%;
+	height: 75px;
+	.padding();
+	
+	p.current-rating {
+		position: absolute;
+		top: -9px;
+		font-weight: 700;
+		font-size: 60px;
+		color: #4A4A4F;
+		width: 94px;
+		text-align: center;
+	}
+	
+	p.out-of-rating {
+		position: absolute;
+		top: 57px;
+		font-weight: 700;
+		color: #7F7F7F;
+		width: 94px;
+		text-align: center;
+	}
+	
+	p.rating-count {
+		position: relative;
+		top: 57px;
+		color: #7F7F7F;
+		text-align: right;
+	}
+	
+	.stack-view {
+		position: absolute;
+		top: 5px;
+		right: 20px;
+		width: 218px;
+		height: 44px;
+		
+		@media all and (min-width: 767px) and (orientation: portrait) {
+			right: 34px;
+		}
+		
+		@media all and (min-width: 833px) and (orientation: portrait) {
+			right: 32px;
+		}
+		
+		@media all and (min-width: 1023px) {
+			right: 52px;
+		}
+		
+		@media all and (min-width: 1365px) and (orientation: landscape) {
+			right: 51px;
+		}
+		
+		.rating-row-view {
+			display: flex;
+			width: 100%;
+			height: 9px;
+			
+			.review-rating-view {
+				display: flex;
+				justify-content: flex-end;
+				width: 43px;
+				height: 7px;
+				margin-top: 1px;
+				margin-left: -5px;
+				
+				.rating-star {
+					width: 7px;
+					height: 7px;
+					.encoded-svg-background("<svg width='7px' height='7px' viewBox='0 0 7 7' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><polygon id='Star' points='3.5 5.25 1.44275162 6.33155948 1.8356511 4.04077974 0.171302193 2.41844052 2.47137581 2.08422026 3.5 0 4.52862419 2.08422026 6.82869781 2.41844052 5.1643489 4.04077974 5.55724838 6.33155948' fill='#86868A'/></svg>");
+					
+					&:not(:first-child) {
+						margin-left: 2px;
+					}
+				}
+			}
+			
+			.rating-progress {
+				flex: 1;
+				max-width: calc(~"100% - 50px");
+				height: 2px;
+				margin: 3px 0 3px 12px;
+				border-radius: 1px;
+				background-color: rgba(0, 0, 0, 0.1);
+				overflow: hidden;
+				
+				.rating-progress-fill {
+					width: 0;
+					height: 2px;
+					background-color: #87868B;
+				}
+			}
+		}
+	}
+	
+	@media all and (min-width: 767px) {
+		height: 43px;
+		
+		p.current-rating {
+			top: -13px;
+		}
+		
+		p.out-of-rating {
+			display: inline-block;
+			position: relative;
+			width: auto;
+			top: 30px;
+			left: 104px;
+			margin: 0;
+		}
+		
+		p.rating-count {
+			display: inline-block;
+			position: relative;
+			width: auto;
+			top: 30px;
+			left: 188px;
+			margin: 0;
+		}
+	}
+}

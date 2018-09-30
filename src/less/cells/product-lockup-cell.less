@@ -88,12 +88,10 @@
 	}
 	
 	.review-rating-view {
-		position: absolute;
 		display: flex;
-		top: 14px;
-		left: 38px;
 		width: 100px;
 		height: 16px;
+		margin: -23px 0 7px 38px;
 		
 		.review-rating-star-wrapper {
 			position: relative;
@@ -158,6 +156,11 @@
 		.product-lockup-badge-stack {
 			margin-left: 270px;
 			padding-left: 0;
+			justify-content: flex-start;
+			
+			.badge-view {
+				margin-right: 50px;
+			}
 		}
 	}
 }

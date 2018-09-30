@@ -23,19 +23,19 @@ html
 				
 				.product-lockup-badge-stack
 					.badge-view
-						p.value-label 5,0
+						p.value-label 5.0
 						.review-rating-view
 							each _ in Array(5)
 								.review-rating-star-wrapper
 									.background-fill(style="width: 16px")
 									.review-rating-star
-						p.caption-label 9 Wertungen
+						p.caption-label 1,000 Ratings
 					//- .badge-view.no-padding
 					//- 	.review-rating-view.not-enough-ratings
 					//- 	p.caption-label Zu wenig Wertungen
 						
 					.badge-view
-						p.value-label 1.000
+						p.value-label 1,000
 						p.caption-label Downloads
 			
 			.product-media-cell.swiper-container#productMedia
@@ -54,6 +54,25 @@ html
 				a(href="#").developer-link-cell
 					p Developer Name
 					span Developer
+					
+			.title-header-view
+				p.title-label Ratings &amp; Reviews
+				a.header-button(href="#") See All
+				
+			.product-rating-cell
+				p.current-rating 5.0
+				p.out-of-rating of 5
+				p.rating-count 1,000 Ratings
+				
+				.stack-view
+					- for (var i=0; i<5; i++)
+						.rating-row-view
+							.review-rating-view
+								- for (var j=0; j<5-i; j++)
+									.rating-star
+							.rating-progress
+								.rating-progress-fill(style="width: 50%")
+								
 						
 		script(src="../../lib/js/swiper.min.js")
 		script.

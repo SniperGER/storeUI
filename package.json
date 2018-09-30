@@ -2,7 +2,7 @@
   "name": "storeui",
   "version": "1.0.0",
   "buildVersion": "1.0",
-  "buildNumber": "4",
+  "buildNumber": "5",
   "buildRevision": "40",
   "description": "HTML/CSS framework for creating App Store-like user interfaces",
   "main": "index.js",
