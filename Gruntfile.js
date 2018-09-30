@@ -2,6 +2,7 @@ const lessFiles = [
 	"src/less/intro.less",
 	"src/less/button.less",
 	"src/less/artwork-view.less",
+	"src/less/expandable-text.less",
 	
 	"src/less/cells/editorial-card.less",
 	"src/less/cells/small-lockup-cell.less",
@@ -10,6 +11,7 @@ const lessFiles = [
 	"src/less/cells/action-cell.less",
 	"src/less/cells/product-lockup-cell.less",
 	"src/less/cells/product-media-cell.less",
+	"src/less/cells/product-description-cell.less",
 	
 	"src/less/collection-view.less",
 ];

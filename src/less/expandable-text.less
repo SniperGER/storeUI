@@ -1,0 +1,41 @@
+.expandable-text-view {
+	position: relative;
+	overflow: hidden;
+	
+	p {
+		line-height: 19px;
+		
+		&:not(.expanded) {
+			overflow: hidden;
+		}
+	}
+	
+	.fade-in-button {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		height: 19px;
+		line-height: 19px;
+		background-color: #FFFFFF;
+		color: #007AFF;
+		transition: color .3s;
+		cursor: default;
+		
+		&:active {
+			transition-duration: 0;
+			color: fade(#007AFF, 22%);
+		}
+		
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transform: translate3d(-100%, 0, 0);
+			background: linear-gradient(left, rgba(255, 255, 255, 0) 0%, #FFFFFF 80%);
+			background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #FFFFFF 80%);
+		}
+	}
+}

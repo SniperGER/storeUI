@@ -28,16 +28,73 @@
 			height: calc(~"(100vw * (220 / 375)) * (667 / 375)");
 		}
 		
+		@media all and (min-width: 767px) and (orientation: portrait) {
+			width: auto;
+			height: calc(~"100vh * (255 / 1024)");
+			
+			&:before {
+				width: calc(~"(100vh * (255 / 1024)) * (768 / 1024)");
+				height: auto;
+			}
+			
+			&.landscape:before {
+				width: calc(~"(100vh * (255 / 1024)) * (1024 / 768)");
+			}
+		}
+		
+		@media all and (min-width: 833px) and (orientation: portrait) {
+			width: auto;
+			height: calc(~"100vh * (280 / 1112)");
+			
+			&:before {
+				width: calc(~"(100vh * (280 / 1112)) * (834 / 1112)");
+				height: auto;
+			}
+			
+			&.landscape:before {
+				width: calc(~"(100vh * (280 / 1112)) * (1112 / 834)");
+			}
+		}
+		
+		@media all and (min-width: 1023px) and (orientation: portrait) {
+			width: auto;
+			height: calc(~"100vh * (262 / 1366)");
+			
+			&:before {
+				width: calc(~"(100vh * (262 / 1366)) * (1024 / 1366)");
+				height: auto;
+			}
+			
+			&.landscape:before {
+				width: calc(~"(100vh * (262 / 1366)) * (1366 / 1024)");
+			}
+		}
+		
 		@media all and (min-width: 1023px) and (orientation: landscape) {
+			width: auto;
+			height: calc(~"100vh * (262 / 768)");
+			
+			&:before {
+				width: calc(~"(100vh * (262 / 768)) * (768 / 1024)");
+				height: auto;
+			}
+			
+			&.landscape:before {
+				width: calc(~"(100vh * (262 / 768)) * (768 / 1024)");
+			}
+		}
+		
+		@media all and (min-width: 1365px) and (orientation: landscape) {
 			width: auto;
 			height: calc(~"100vh * (304 / 1024)");
 			
 			&:before {
-				width: calc(~"(100vh * (304 / 1024)) * (1024 / 1366)")
+				width: calc(~"(100vh * (304 / 1024)) * (1024 / 1366)");
+				height: auto;
 			}
 			
 			&.landscape:before {
-				width: calc(~"(100vh * (304 / 1024)) * (1366 / 1024)")
+				width: calc(~"(100vh * (304 / 1024)) * (1366 / 1024)");
 			}
 		}
 		

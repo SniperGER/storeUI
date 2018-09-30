@@ -13,7 +13,7 @@ html
 			.product-lockup-cell
 				.artwork-view
 					.shadow-view
-					img(src="https://via.placeholder.com/118x118")
+					img(src="https://via.placeholder.com/190x190")
 					.border-view
 				
 				.title-container
@@ -23,7 +23,7 @@ html
 				
 				.product-lockup-badge-stack
 					.badge-view
-						p.value-label 3,9
+						p.value-label 5,0
 						.review-rating-view
 							each _ in Array(5)
 								.review-rating-star-wrapper
@@ -41,11 +41,19 @@ html
 			.product-media-cell.swiper-container#productMedia
 				.swiper-wrapper
 					each _ in Array(4)
-						.screenshot-cell.swiper-slide
+						.screenshot-cell.landscape.swiper-slide
 							.artwork-view
 								.shadow-view
 								img(src="https://via.placeholder.com/414x736")
 								.border-view
+								
+			.product-description-cell
+				.expandable-text-view(data-max-lines="3")
+					p Der ÖPNV Navigator ist Dein perfekter Begleiter für den Öffentlichen Nah- und Fernverkehr. Egal ob mit Bus oder Bahn, der ÖPNV Nagivator zeigt dir die ideale Route zu deinem gewünschten Zielort an. Dank der Integration von zahlreichen regionalen und überregionalen Verkehrsbetrieben gelangst du zuverlässig an jeden gewünschten Ort. Und mit der intuitiven Routen-Übersicht ist es einfacher denn je, die perfekte Verbindung von A nach B zu finden. Und das allerbeste: die App ist kostenlos und enthält keine nervige In-App-Werbung!
+					button.fade-in-button Mehr
+				a(href="#").developer-link-cell
+					p Developer Name
+					span Developer
 						
 		script(src="../../lib/js/swiper.min.js")
 		script.
@@ -76,4 +84,17 @@ html
 			
 			swiperConstructors.forEach(item => {
 				swipers[item["id"]] = new Swiper(document.getElementById(item["id"]), item["options"]);
+			});
+			
+			document.querySelectorAll(".expandable-text-view").forEach(text => {
+				if (text.hasAttribute("data-max-lines")) {
+					let maxHeight = 19 * parseInt(text.getAttribute("data-max-lines"));
+					text.style.maxHeight = `${maxHeight}px`;
+					
+					if (text.scrollHeight > maxHeight) {
+						text.querySelector(".fade-in-button").classList.add("visible");
+					} else {
+						text.querySelector(".fade-in-button").classList.remove("visible");
+					}
+				}
 			});
