@@ -3,32 +3,27 @@
 .product-review-cell {
 	position: relative;
 	height: 220px;
-	margin-top: 16px;
+	margin: 16px 0 24px;
 	background-color: #F0F0F8;
 	border-radius: 8px;
 	padding: 15px 20px;
 	
+	.row:not(:first-child) {
+		margin-top: 5px;
+	}
+	
 	p.title-label {
-		position: absolute;
-		top: 15px;
-		left: 20px;
 		font-weight: 500;
 		max-width: 50%;
 	}
 	
 	p.date-label {
-		position: absolute;
-		top: 15px;
-		right: 20px;
 		color: #AAAAAA;
 		max-width: 50%;
 		text-align: right;
 	}
 	
 	p.author-label {
-		position: absolute;
-		top: 38px;
-		right: 20px;
 		color: #AAAAAA;
 		max-width: 50%;
 		text-align: right;
@@ -36,9 +31,6 @@
 	
 	.review-rating-view {
 		display: flex;
-		position: absolute;
-		top: 40px;
-		left: 20px;
 		width: 72px;
 		height: 12px;
 		
@@ -56,7 +48,7 @@
 	}
 		
 	.expandable-text-view {
-		margin-top: 53px;
+		margin-top: 10px;
 		
 		.fade-in-button {
 			background-color: #F0F0F8;

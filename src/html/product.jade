@@ -77,15 +77,28 @@ html
 				.swiper-wrapper
 					each _ in Array(4)
 						.product-review-cell.swiper-slide
-							p.title-label Review Title
-							p.date-label 14. Jan
-							p.author-label Anon
-							.review-rating-view
-								- for (var i=0; i<5; i++)
-									.rating-star
+							.row
+								p.title-label Review Title
+								p.date-label 14. Jan
+							.row
+								.review-rating-view
+									- for (var i=0; i<5; i++)
+										.rating-star
+								p.author-label Anon
 							.expandable-text-view(data-max-lines="7")
 								p Non reprehenderit laborum eiusmod in commodo voluptate fugiat. Laborum aliquip reprehenderit ex do. Sint deserunt magna enim dolore officia labore sunt laboris nostrud fugiat excepteur amet sint. Veniam duis non commodo dolore deserunt amet et eu in ut nostrud sunt. Pariatur ipsum do ullamco ea eu pariatur eu tempor consequat consequat esse consectetur.
 								button.fade-in-button More
+								
+			.title-header-view
+				p.title-label What's New
+				a.header-button(href="#") Version History
+			.titled-paragraph-cell
+				.row
+					p.primary-subtitle Version 1.0
+					p.secondary-subtitle 2w ago
+				.expandable-text-view(data-max-lines="3")
+					p Ea pariatur ex laboris Lorem ex. Elit consequat esse et non ad aliqua aliqua magna minim minim. Proident commodo ad laborum laborum cupidatat magna aute tempor consequat Lorem aliquip consectetur incididunt. Ut veniam nostrud occaecat aliqua do id est ad non. Voluptate fugiat adipisicing mollit pariatur duis eu enim veniam dolore nulla dolore sit. Ad in veniam voluptate eu esse deserunt consequat occaecat consequat incididunt mollit.
+					button.fade-in-button More
 						
 		script(src="../../lib/js/swiper.min.js")
 		script.
