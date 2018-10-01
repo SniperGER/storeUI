@@ -1,0 +1,70 @@
+@import "../_mixins";
+
+.product-review-cell {
+	position: relative;
+	height: 220px;
+	margin-top: 16px;
+	background-color: #F0F0F8;
+	border-radius: 8px;
+	padding: 15px 20px;
+	
+	p.title-label {
+		position: absolute;
+		top: 15px;
+		left: 20px;
+		font-weight: 500;
+		max-width: 50%;
+	}
+	
+	p.date-label {
+		position: absolute;
+		top: 15px;
+		right: 20px;
+		color: #AAAAAA;
+		max-width: 50%;
+		text-align: right;
+	}
+	
+	p.author-label {
+		position: absolute;
+		top: 38px;
+		right: 20px;
+		color: #AAAAAA;
+		max-width: 50%;
+		text-align: right;
+	}
+	
+	.review-rating-view {
+		display: flex;
+		position: absolute;
+		top: 40px;
+		left: 20px;
+		width: 72px;
+		height: 12px;
+		
+		.rating-star {
+			width: 12px;
+			height: 12px;
+			background-position: center;
+			background-repeat: no-repeat;
+			.encoded-svg-background("<svg width='12px' height='11px' viewBox='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><polygon points='6 9 2.47328849 10.854102 3.14683045 6.92705098 0.293660902 4.14589803 4.23664424 3.57294902 6 0 7.76335576 3.57294902 11.7063391 4.14589803 8.85316955 6.92705098 9.52671151 10.854102' fill='#FE8207' /></svg>");
+			
+			&:not(:first-child) {
+				margin-left: 3px;
+			}
+		}
+	}
+		
+	.expandable-text-view {
+		margin-top: 53px;
+		
+		.fade-in-button {
+			background-color: #F0F0F8;
+			
+			&:after {
+				background: linear-gradient(left, rgba(255, 255, 255, 0) 0%, #F0F0F8 80%);
+				background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #F0F0F8 80%);
+			}
+		}
+	}
+}

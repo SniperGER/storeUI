@@ -41,7 +41,7 @@ html
 			.product-media-cell.swiper-container#productMedia
 				.swiper-wrapper
 					each _ in Array(4)
-						.screenshot-cell.landscape.swiper-slide
+						.screenshot-cell.swiper-slide
 							.artwork-view
 								.shadow-view
 								img(src="https://via.placeholder.com/414x736")
@@ -49,8 +49,8 @@ html
 								
 			.product-description-cell
 				.expandable-text-view(data-max-lines="3")
-					p Der ÖPNV Navigator ist Dein perfekter Begleiter für den Öffentlichen Nah- und Fernverkehr. Egal ob mit Bus oder Bahn, der ÖPNV Nagivator zeigt dir die ideale Route zu deinem gewünschten Zielort an. Dank der Integration von zahlreichen regionalen und überregionalen Verkehrsbetrieben gelangst du zuverlässig an jeden gewünschten Ort. Und mit der intuitiven Routen-Übersicht ist es einfacher denn je, die perfekte Verbindung von A nach B zu finden. Und das allerbeste: die App ist kostenlos und enthält keine nervige In-App-Werbung!
-					button.fade-in-button Mehr
+					p Adipisicing commodo officia officia cillum deserunt nisi anim quis eu proident nisi incididunt mollit veniam. Adipisicing aliquip ullamco commodo excepteur occaecat occaecat nostrud eu. Nostrud exercitation adipisicing nostrud amet veniam culpa. Do fugiat id occaecat adipisicing exercitation amet aute esse incididunt ex magna. Ullamco ad ut ullamco pariatur excepteur enim do veniam est. Esse sunt cupidatat consectetur consequat anim commodo in. Lorem qui in dolore nisi et.
+					button.fade-in-button More
 				a(href="#").developer-link-cell
 					p Developer Name
 					span Developer
@@ -72,13 +72,48 @@ html
 									.rating-star
 							.rating-progress
 								.rating-progress-fill(style="width: 50%")
-								
+			
+			.horizontal-collection-view-cell.swiper-container#reviewCell
+				.swiper-wrapper
+					each _ in Array(4)
+						.product-review-cell.swiper-slide
+							p.title-label Review Title
+							p.date-label 14. Jan
+							p.author-label Anon
+							.review-rating-view
+								- for (var i=0; i<5; i++)
+									.rating-star
+							.expandable-text-view(data-max-lines="7")
+								p Non reprehenderit laborum eiusmod in commodo voluptate fugiat. Laborum aliquip reprehenderit ex do. Sint deserunt magna enim dolore officia labore sunt laboris nostrud fugiat excepteur amet sint. Veniam duis non commodo dolore deserunt amet et eu in ut nostrud sunt. Pariatur ipsum do ullamco ea eu pariatur eu tempor consequat consequat esse consectetur.
+								button.fade-in-button More
 						
 		script(src="../../lib/js/swiper.min.js")
 		script.
 			let swipers = {};
 			let swiperConstructors = [{
 				id: "productMedia",
+				options: {
+					roundLengths : 'false',
+					slidesPerView :'auto',
+					slidesPerViewFit : false,
+					spaceBetween: 32,
+					breakpoints: {
+						414: {
+							spaceBetween: 10
+						},
+						768: {
+							spaceBetween: 20
+						},
+						834: {
+							spaceBetween: 22
+						},
+						1024: {
+							spaceBetween: 30
+						}
+					}
+				}
+			}, {
+				id: "reviewCell",
 				options: {
 					roundLengths : 'false',
 					slidesPerView :'auto',
