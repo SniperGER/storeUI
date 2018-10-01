@@ -1,16 +1,47 @@
 @import "../_mixins";
 
 .titled-paragraph-cell {
+	position: relative;
 	width: 100%;
 	.padding();
 	margin-bottom: 32px;
 	
-	p.primary-subtitle,
-	p.secondary-subtitle {
-		color: #7F7F7F;
+	.row {
+		p.primary-subtitle,
+		p.secondary-subtitle {
+			color: #7F7F7F;
+		}
+		
+		@media all and (min-width: 767px) {
+			position: absolute;
+			width: 142px;
+			display: block;
+			text-align: right;
+		}
+		
+		@media all and (min-width: 767px) and (orientation: portrait) {
+			right: 34px;
+		}
+		
+		@media all and (min-width: 833px) and (orientation: portrait) {
+			right: 32px;
+		}
+		
+		@media all and (min-width: 1023px) {
+			right: 52px;
+		}
+		
+		@media all and (min-width: 1365px) and (orientation: landscape) {
+			right: 51px;
+		}
 	}
 	
 	.expandable-text-view {
-		margin-top: 12px
+		margin-top: 12px;
+		
+		@media all and (min-width: 767px) {
+			max-width: calc(100% - 190px);
+			margin-top: 0;
+		}
 	}
 }
