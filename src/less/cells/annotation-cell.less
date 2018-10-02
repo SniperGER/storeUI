@@ -31,8 +31,24 @@
 			}
 		}
 		
-		&:nth-last-child(-n+3):not(.force-separator):after {
+		&:last-child:not(.force-separator):after {
 			display: none;
+		}
+		
+		&.expandable {
+			&:not(.expanded) {
+				padding-right: 24px;
+				
+				&:before {
+					content: '';
+					position: absolute;
+					top: 21px;
+					right: 0;
+					width: 14px;
+					height: 9px;
+					.encoded-svg-background("<svg width='14px' height='9px' viewBox='0 0 14 9' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><polygon id='chevron' points='7 8.48528137 0 1.41421356 1.4 2.22044605e-16 7 5.65685425 12.6 1.33226763e-15 14 1.41421356' fill='#9E9E9E'></polygon></svg>");
+				}
+			}
 		}
 	}
 	
@@ -41,10 +57,27 @@
 		flex-wrap: wrap;
 		
 		.annotation-cell {
+			display: block ;
 			min-width: calc(~"(100% - 60px) /3");
+			height: 64px;
+			
+			p.title-label,
+			p.subtitle-label {
+				width: 100%;
+				margin: 0;
+				margin-bottom: 2px;
+			}
 			
 			&:not(:nth-child(3n)) {
 				margin-right: 30px;
+			}
+			
+			&:after {
+				display: none;
+			}
+			
+			&.expandable:before {
+				top: 6px;
 			}
 		}
 	}
