@@ -15,6 +15,7 @@ const lessFiles = [
 	"src/less/cells/product-description-cell.less",
 	"src/less/cells/product-rating-cell.less",
 	"src/less/cells/product-review-cell.less",
+	"src/less/cells/annotation-cell.less",
 	
 	"src/less/collection-view.less",
 ];
