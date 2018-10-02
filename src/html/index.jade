@@ -28,7 +28,7 @@ html
 				
 			.horizontal-collection-view-cell.swiper-container.margin-bottom#smallLockup
 				.swiper-wrapper
-					each _ in Array(15)
+					each _ in Array(12)
 						.small-lockup-cell.swiper-slide
 							.artwork-view
 								.shadow-view
@@ -73,7 +73,7 @@ html
 			
 			.horizontal-collection-view-cell.swiper-container.margin-bottom#stickerPack
 				.swiper-wrapper
-					each _ in Array(15)
+					each _ in Array(12)
 						.small-lockup-cell.sticker-pack.swiper-slide
 							.artwork-view
 								.shadow-view
@@ -89,7 +89,7 @@ html
 						
 			.horizontal-collection-view-cell.swiper-container.margin-bottom#watchApp
 				.swiper-wrapper
-					each _ in Array(3)
+					each _ in Array(12)
 						.small-lockup-cell.watch-app.swiper-slide
 							.artwork-view
 								.shadow-view
@@ -118,9 +118,9 @@ html
 			.title-header-view
 				p.title-label Titled Buttons
 			
-			.titled-button-stack.margin-bottom
-				button.titled-button Button
-				button.titled-button(disabled) Disabled
+			.titled-button-stack.row.no-justify.margin-bottom
+				button.titled-button.column.column-12.medium-4 Button
+				button.titled-button.column.column-12.medium-4(disabled) Disabled
 				
 		script(src="../../lib/js/swiper.min.js")
 		script.

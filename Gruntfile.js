@@ -1,5 +1,6 @@
 const lessFiles = [
 	"src/less/intro.less",
+	"src/less/grid.less",
 	"src/less/button.less",
 	"src/less/artwork-view.less",
 	"src/less/expandable-text.less",
