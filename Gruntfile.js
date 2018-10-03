@@ -22,6 +22,13 @@ const lessFiles = [
 	"src/less/collection-view.less",
 ];
 
+const jsFiles = [
+	"src/js/storeUI-intro.js",
+	"src/js/init.js",
+	"src/js/storeUI-outro.js",
+	"src/js/collection-view.js",
+]
+
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -77,6 +84,15 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		concat: {
+			options: {
+				sourceMap: true
+			},
+			build: {
+				src: jsFiles,
+				dest: "build/js/storeUI-<%= pkg.buildVersion %>.js"
+			}
+		},
 		buildnumber: {
 			build: {
 				options: {
@@ -107,7 +123,7 @@ module.exports = function(grunt) {
 		},
 		replace: {
 			build: {
-				src: ["build/css/storeUI-<%= pkg.buildVersion %>.css"],
+				src: ["build/css/storeUI-<%= pkg.buildVersion %>.css", "build/js/storeUI-<%= pkg.buildVersion %>.js"],
 				overwrite: true,
 				replacements: [
 					{
@@ -136,6 +152,7 @@ module.exports = function(grunt) {
 	
 	grunt.loadNpmTasks('grunt-contrib-pug');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-build-number');
 	grunt.loadNpmTasks('grunt-modify-json');
 	grunt.loadNpmTasks('grunt-text-replace');
@@ -147,6 +164,7 @@ module.exports = function(grunt) {
 		'buildnumber:build',
 		'readpkg',
 		'less:build',
+		'concat:build',
 		'pug:build',
 		'replace:build'
 	]);
@@ -155,6 +173,7 @@ module.exports = function(grunt) {
 		'buildnumber:revision',
 		'readpkg',
 		'less:build',
+		'concat:build',
 		'pug:build',
 		'replace:build'
 	]);

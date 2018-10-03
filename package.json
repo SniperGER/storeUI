@@ -2,8 +2,8 @@
   "name": "storeui",
   "version": "1.0.0",
   "buildVersion": "1.0",
-  "buildNumber": "7",
-  "buildRevision": "34",
+  "buildNumber": "8",
+  "buildRevision": "25",
   "description": "HTML/CSS framework for creating App Store-like user interfaces",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
   "devDependencies": {
     "grunt": "^1.0.3",
     "grunt-build-number": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-less": "^2.0.0",
     "grunt-contrib-pug": "^1.0.0",
     "grunt-modify-json": "^0.1.3",
