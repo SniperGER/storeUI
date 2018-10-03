@@ -1,6 +1,7 @@
 storeUI.CollectionView = class {
 	constructor(element, params) {
 		let collectionView = this;
+		collectionView.container = element;
 		
 		collectionView.params = {
 			type: null

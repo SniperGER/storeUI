@@ -28,6 +28,7 @@ const jsFiles = [
 	"src/js/init.js",
 	"src/js/storeUI-outro.js",
 	"src/js/collection-view.js",
+	"src/js/expandable-text.js",
 ]
 
 module.exports = function(grunt) {

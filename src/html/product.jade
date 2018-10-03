@@ -139,17 +139,3 @@ html
 		script(src="../js/storeUI-1.0.js")
 		script.
 			const app = new storeUI();
-
-			
-			document.querySelectorAll(".expandable-text-view").forEach(text => {
-				if (text.hasAttribute("data-max-lines")) {
-					let maxHeight = 19 * parseInt(text.getAttribute("data-max-lines"));
-					text.style.maxHeight = `${maxHeight}px`;
-					
-					if (text.scrollHeight > maxHeight) {
-						text.querySelector(".fade-in-button").classList.add("visible");
-					} else {
-						text.querySelector(".fade-in-button").classList.remove("visible");
-					}
-				}
-			});

@@ -34,6 +34,16 @@
 					});
 				}
 			});
+			
+			// Expandable texts
+			app.expandableTexts = [];
+			document.querySelectorAll(".expandable-text-view").forEach(view => {
+				app.expandableTexts.push(new storeUI.ExpandableText(view, {
+					startExpanded: view.getAttribute("data-start-expanded") == "true",
+					hideEmptyLines: !view.getAttribute("data-hide-empty-lines") == "false",
+					maxLines: parseInt(view.getAttribute("data-max-lines")) || 3
+				}));
+			});
 		}
 		
 		app.init();
