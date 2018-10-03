@@ -61,6 +61,28 @@ storeUI.CollectionView = class {
 						spaceBetween: 30
 					}
 				}
+			},
+			media: {
+				slidesPerView :'auto',
+				slidesPerViewFit : false,
+				breakpoints: {
+					414: {
+						spaceBetween: 10,
+					},
+					768: {
+						spaceBetween: 20
+					},
+					834: {
+						spaceBetween: 22
+					},
+					1024: {
+						spaceBetween: 30
+					}
+				}
+			},
+			review: {
+				slidesPerView :'auto',
+				slidesPerViewFit : false,
 			}
 		}
 	}

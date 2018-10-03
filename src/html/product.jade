@@ -130,57 +130,10 @@ html
 			.footnote-cell
 				p &copy; 2018 Team FESTIVAL
 		script(src="../../lib/js/swiper.min.js")
+		script(src="../js/storeUI-1.0.js")
 		script.
-			let swipers = {};
-			let swiperConstructors = [{
-				id: "productMedia",
-				options: {
-					roundLengths : 'false',
-					slidesPerView :'auto',
-					slidesPerViewFit : false,
-					spaceBetween: 32,
-					breakpoints: {
-						414: {
-							spaceBetween: 10
-						},
-						768: {
-							spaceBetween: 20
-						},
-						834: {
-							spaceBetween: 22
-						},
-						1024: {
-							spaceBetween: 30
-						}
-					}
-				}
-			}, {
-				id: "reviewCell",
-				options: {
-					roundLengths : 'false',
-					slidesPerView :'auto',
-					slidesPerViewFit : false,
-					spaceBetween: 32,
-					breakpoints: {
-						414: {
-							spaceBetween: 10
-						},
-						768: {
-							spaceBetween: 20
-						},
-						834: {
-							spaceBetween: 22
-						},
-						1024: {
-							spaceBetween: 30
-						}
-					}
-				}
-			}];
-			
-			swiperConstructors.forEach(item => {
-				swipers[item["id"]] = new Swiper(document.getElementById(item["id"]), item["options"]);
-			});
+			const app = new storeUI();
+
 			
 			document.querySelectorAll(".expandable-text-view").forEach(text => {
 				if (text.hasAttribute("data-max-lines")) {
