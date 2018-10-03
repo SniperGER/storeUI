@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "buildVersion": "1.0",
   "buildNumber": "8",
-  "buildRevision": "37",
+  "buildRevision": "59",
   "description": "HTML/CSS framework for creating App Store-like user interfaces",
   "main": "index.js",
   "scripts": {
