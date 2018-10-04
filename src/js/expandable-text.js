@@ -10,7 +10,7 @@ storeUI.ExpandableText = class {
 			startExpanded: false,
 			hideEmptyLines: true,
 			maxLines: 3,
-			buttonLink: null
+			redirectUri: null
 		};
 		Object.assign(expandableText.params, params);
 		
@@ -21,8 +21,10 @@ storeUI.ExpandableText = class {
 		this.checkMoreButtonPresence();
 		window.addEventListener("resize", this.checkMoreButtonPresence.bind(this));
 		
-		if (!expandableText.buttonLink) {
+		if (!expandableText.redirectUri) {
 			expandableText.fadeInButton.addEventListener(storeUI.touchEventClick, this.expand.bind(this));
+		} else {
+			window.location.href = expandableText.params.redirectUri;
 		}
 	}
 	
@@ -38,7 +40,7 @@ storeUI.ExpandableText = class {
 			expandableText.container.removeAttribute("style");
 		}
 		
-		if (expandableText.container.scrollHeight > (storeUI.ExpandableText.lineHeight * expandableText.params.maxLines)) {
+		if (expandableText.container.scrollHeight > (storeUI.ExpandableText.lineHeight * expandableText.params.maxLines) && !expandableText._expanded) {
 			expandableText.fadeInButton.classList.remove("hidden");
 		} else {
 			expandableText.fadeInButton.classList.add("hidden");
@@ -60,7 +62,7 @@ storeUI.ExpandableText = class {
 		let expandableText = this;
 		
 		if (expandableText.params.hideEmptyLines && !expandableText._expanded) {
-			return expandableText._rawText.replace(/<br><br>/g, "<br>");
+			return expandableText._rawText.replace(/\<br\>\<br\>/g, "<br>");
 		} else {
 			return expandableText._rawText;
 		}
