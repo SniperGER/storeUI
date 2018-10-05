@@ -21,11 +21,7 @@ storeUI.ExpandableText = class {
 		this.checkMoreButtonPresence();
 		window.addEventListener("resize", this.checkMoreButtonPresence.bind(this));
 		
-		if (!expandableText.redirectUri) {
-			expandableText.fadeInButton.addEventListener(storeUI.touchEventClick, this.expand.bind(this));
-		} else {
-			window.location.href = expandableText.params.redirectUri;
-		}
+		expandableText.fadeInButton.addEventListener(storeUI.touchEventClick, this.expand.bind(this));
 	}
 	
 	static get lineHeight() {
@@ -49,6 +45,12 @@ storeUI.ExpandableText = class {
 	
 	expand() {
 		let expandableText = this;
+		
+		if (expandableText.params.redirectUri) {
+			window.location.href = expandableText.params.redirectUri;
+			return;
+		}
+		
 		expandableText._expanded = true;
 		
 		expandableText.container.classList.add("expanded");
