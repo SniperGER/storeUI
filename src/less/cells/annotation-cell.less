@@ -8,15 +8,25 @@
 		position: relative;
 		display: flex;
 		justify-content: space-between;
+		padding: 15px 0;
 		
-		
-		p.title-label,
-		p.subtitle-label {
-			margin: 15px 0;
+		.title-label {
+			color: #8E8E93;
 		}
 		
-		p.title-label {
-			color: #8E8E93;
+		.annotation-cell-item {
+			display: flex;
+			justify-content: space-between;
+			
+			.text-label {
+				// white-space: nowrap;
+				// text-overflow: ellipsis;
+				// overflow: hidden;
+			}
+			
+			.sub-text-label {
+				margin-left: 12px;
+			}
 		}
 		
 		&:not(.no-separator) {
@@ -35,8 +45,15 @@
 		// 	display: none;
 		// }
 		
+		&:not(.expandable) {
+			.annotation-cell-item {
+				display: none;
+			}
+		}
+		
 		&.expandable {
 			&:not(.expanded) {
+				cursor: pointer;
 				padding-right: 24px;
 				
 				&:before {
@@ -48,6 +65,21 @@
 					height: 9px;
 					.encoded-svg-background("<svg width='14px' height='9px' viewBox='0 0 14 9' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><polygon id='chevron' points='7 8.48528137 0 1.41421356 1.4 2.22044605e-16 7 5.65685425 12.6 1.33226763e-15 14 1.41421356' fill='#9E9E9E'></polygon></svg>");
 				}
+				
+				.annotation-cell-item {
+					display: none;
+				}
+			}
+			
+			&.expanded {
+				display: block;
+				
+				& > .title-label {
+					margin-bottom: 6px;
+				}
+				& > .subtitle-label {
+					display: none;
+				}
 			}
 		}
 	}
@@ -58,11 +90,11 @@
 		
 		.annotation-cell {
 			display: block ;
-			min-width: calc(~"(100% - 60px) /3");
-			height: 64px;
+			width: calc(~"(100% - 60px) /3");
+			padding: 0 0 24px;
 			
-			p.title-label,
-			p.subtitle-label {
+			.title-label,
+			.subtitle-label {
 				width: 100%;
 				margin: 0;
 				margin-bottom: 2px;
@@ -76,8 +108,14 @@
 				display: none;
 			}
 			
-			&.expandable:before {
-				top: 6px;
+			&.expandable {
+				&.expanded > .title-label {
+					margin-bottom: 2px;
+				}
+				
+				&:before {
+					top: 6px;
+				}
 			}
 		}
 	}

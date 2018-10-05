@@ -36,7 +36,7 @@ storeUI.ExpandableText = class {
 			expandableText.container.removeAttribute("style");
 		}
 		
-		if (expandableText.container.scrollHeight > (storeUI.ExpandableText.lineHeight * expandableText.params.maxLines) && !expandableText._expanded) {
+		if (expandableText.container.scrollHeight > (storeUI.ExpandableText.lineHeight * expandableText.params.maxLines) && !expandableText.params.startExpanded && !expandableText._expanded) {
 			expandableText.fadeInButton.classList.remove("hidden");
 		} else {
 			expandableText.fadeInButton.classList.add("hidden");

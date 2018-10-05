@@ -45,6 +45,12 @@
 					redirectUri: view.getAttribute("data-redirect-uri")
 				}));
 			});
+			
+			// Annotation Cells
+			app.annotationCells = [];
+			document.querySelectorAll(".annotation-cell.expandable").forEach(cell => {
+				app.annotationCells.push(new storeUI.AnnotationCell(cell, null));
+			});
 		}
 		
 		app.init();

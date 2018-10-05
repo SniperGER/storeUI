@@ -29,6 +29,7 @@ const jsFiles = [
 	"src/js/storeUI-outro.js",
 	"src/js/collection-view.js",
 	"src/js/expandable-text.js",
+	"src/js/annotation-cell.js",
 ]
 
 module.exports = function(grunt) {

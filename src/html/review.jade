@@ -1,0 +1,28 @@
+doctype html
+html
+	head
+		title storeUI Demo - Review
+		
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0")
+		
+		link(rel="stylesheet", href="../../lib/css/swiper.min.css")
+		link(rel="stylesheet", href="../css/storeUI-1.0.css")
+	body
+		.collection-view
+			.product-review-collection
+					.product-review-cell
+						.row
+							p.title-label Review Title
+							p.date-label 14. Jan
+						.row
+							.review-rating-view
+								- for (var i=0; i<5; i++)
+									.rating-star
+							p.author-label Anon
+						.expandable-text-view(data-max-lines="7", data-start-expanded="true")
+							p Non reprehenderit laborum eiusmod in commodo voluptate fugiat. Laborum aliquip reprehenderit ex do. Sint deserunt magna enim dolore officia labore sunt laboris nostrud fugiat excepteur amet sint. Veniam duis non commodo dolore deserunt amet et eu in ut nostrud sunt. Pariatur ipsum do ullamco ea eu pariatur eu tempor consequat consequat esse consectetur.
+							button.fade-in-button More
+		script(src="../js/storeUI-1.0.js")
+		script.
+			const app = new storeUI();
