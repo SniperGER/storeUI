@@ -39,6 +39,10 @@
 		width: 218px;
 		height: 44px;
 		
+		@media all and (min-width: 767px) {
+			top: 1px;
+		}
+		
 		@media all and (min-width: 767px) and (orientation: portrait) {
 			right: 34px;
 			width: 344px;
@@ -104,6 +108,14 @@
 					background-color: #87868B;
 				}
 			}
+		}
+	}
+	
+	& + .title-header-view {
+		margin-top: 16px;
+		
+		&:after {
+			display: none;
 		}
 	}
 	

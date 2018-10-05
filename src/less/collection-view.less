@@ -9,6 +9,8 @@
 		position: relative;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
+		min-height: 48px;
 		
 		.padding();
 		padding-top: 11px;
@@ -37,7 +39,8 @@
 			text-decoration: none;
 			color: var(--accent-color);
 			transition: opacity .4s;
-			max-width: 50%; /* Rework for iPad */
+			max-width: 50%;
+			margin-left: auto;
 			
 			&:active {
 				transition-duration: 0;
@@ -48,10 +51,14 @@
 	
 	.horizontal-collection-view-cell {
 		width: 100%;
-		.padding();
 		
 		&.margin-bottom {
 			margin-bottom: 32px;
+		}
+		
+		&.product-review-collection {
+			padding-top: 16px;
+			padding-bottom: 24px;
 		}
 		
 		.editorial-card,
@@ -60,6 +67,8 @@
 		.product-review-cell {
 			.width();
 		}
+		
+		.padding();
 	}
 	
 	.titled-button-stack {

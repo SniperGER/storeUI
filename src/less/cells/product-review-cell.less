@@ -1,60 +1,83 @@
 @import "../_mixins";
 
-.product-review-cell {
-	position: relative;
-	min-height: 220px;
-	margin: 16px 0 24px;
-	background-color: #F0F0F8;
-	border-radius: 8px;
-	padding: 15px 20px;
+.product-review-collection {
+	width: 100%;
+	.padding();
 	
-	.row:not(:first-child) {
-		margin-top: 5px;
-	}
-	
-	p.title-label {
-		font-weight: 500;
-		max-width: 50%;
-	}
-	
-	p.date-label {
-		color: #AAAAAA;
-		max-width: 50%;
-		text-align: right;
-	}
-	
-	p.author-label {
-		color: #AAAAAA;
-		max-width: 50%;
-		text-align: right;
-	}
-	
-	.review-rating-view {
-		display: flex;
-		width: 72px;
-		height: 12px;
+	.product-review-cell {
+		position: relative;
+		min-height: 220px;
+		background-color: #F0F0F8;
+		border-radius: 8px;
+		padding: 15px 20px;
 		
-		.rating-star {
-			width: 12px;
+		.row:not(:first-child) {
+			margin-top: 5px;
+		}
+		
+		p.title-label {
+			font-weight: 500;
+			max-width: 50%;
+		}
+		
+		p.date-label {
+			color: #AAAAAA;
+			max-width: 50%;
+			text-align: right;
+		}
+		
+		p.author-label {
+			color: #AAAAAA;
+			max-width: 50%;
+			text-align: right;
+		}
+		
+		.review-rating-view {
+			display: flex;
+			width: 72px;
 			height: 12px;
-			background-position: center;
-			background-repeat: no-repeat;
-			.encoded-svg-background("<svg width='12px' height='11px' viewBox='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><polygon points='6 9 2.47328849 10.854102 3.14683045 6.92705098 0.293660902 4.14589803 4.23664424 3.57294902 6 0 7.76335576 3.57294902 11.7063391 4.14589803 8.85316955 6.92705098 9.52671151 10.854102' fill='#FE8207' /></svg>");
 			
-			&:not(:first-child) {
-				margin-left: 3px;
+			.rating-star {
+				width: 12px;
+				height: 12px;
+				background-position: center;
+				background-repeat: no-repeat;
+				.encoded-svg-background("<svg width='12px' height='11px' viewBox='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><polygon points='6 9 2.47328849 10.854102 3.14683045 6.92705098 0.293660902 4.14589803 4.23664424 3.57294902 6 0 7.76335576 3.57294902 11.7063391 4.14589803 8.85316955 6.92705098 9.52671151 10.854102' fill='#FE8207' /></svg>");
+				
+				&:not(:first-child) {
+					margin-left: 3px;
+				}
+			}
+		}
+			
+		.expandable-text-view {
+			margin-top: 10px;
+			
+			.fade-in-button {
+				background-color: #F0F0F8;
+				
+				&:after {
+					background: linear-gradient(to right, rgba(240, 240, 248, 0) 0%, #F0F0F8 80%);
+				}
 			}
 		}
 	}
+	
+	&:not(.horizontal-collection-view-cell) {
+		padding-bottom: 16px;
 		
-	.expandable-text-view {
-		margin-top: 10px;
+		.product-review-cell {
+			margin-bottom: 16px;
+			min-height: auto;
+		}
 		
-		.fade-in-button {
-			background-color: #F0F0F8;
+		@media all and (min-width: 767px) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
 			
-			&:after {
-				background: linear-gradient(to right, rgba(240, 240, 248, 0) 0%, #F0F0F8 80%);
+			.product-review-cell {
+				min-width: calc(~"50% - 15px");
 			}
 		}
 	}
