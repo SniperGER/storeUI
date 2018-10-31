@@ -6,13 +6,14 @@
 		{
 			"type": "grunt",
 			"task": "revision",
+			"presentation": {
+				"reveal": "never"
+			},
 			"group": {
 				"kind": "build",
 				"isDefault": true
 			},
-			"presentation": {
-				"reveal": "never"
-			}
+			"problemMatcher": []
 		},
 		{
 			"type": "grunt",
@@ -29,6 +30,15 @@
 				"reveal": "never"
 			},
 			"problemMatcher": []
+		},
+		{
+			"label": "docs:build",
+			"type": "shell",
+			"command": "grunt --base ./ --gruntfile docs/Gruntfile.js docs:build",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "never"
+			}
 		}
 	]
 }

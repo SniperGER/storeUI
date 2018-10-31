@@ -1,0 +1,25 @@
+doctype html
+html
+	head
+		title storeUI Demo - Product
+		
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0")
+		
+		link(rel="stylesheet", href="../../lib/css/swiper.min.css")
+		link(rel="stylesheet", href="../css/storeUI-1.0.css")
+	body
+		.collection-view
+			- for (var i=0; i<5; i++)
+				.titled-paragraph-cell.detail-styling
+					.row
+						p.primary-subtitle 1.0
+						p.secondary-subtitle 2w ago
+					.expandable-text-view(data-max-lines="3")
+						p Ea pariatur ex laboris Lorem ex. Elit consequat esse et non ad aliqua aliqua magna minim minim. Proident commodo ad laborum laborum cupidatat magna aute tempor consequat Lorem aliquip consectetur incididunt. Ut veniam nostrud occaecat aliqua do id est ad non. Voluptate fugiat adipisicing mollit pariatur duis eu enim veniam dolore nulla dolore sit. Ad in veniam voluptate eu esse deserunt consequat occaecat consequat incididunt mollit.
+						button.fade-in-button More
+					.separator-view
+		script(src="../../lib/js/swiper.min.js")
+		script(src="../js/storeUI-1.0.js")
+		script.
+			const app = new storeUI();

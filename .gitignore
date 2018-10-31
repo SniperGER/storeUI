@@ -6,3 +6,5 @@ build
 build/*
 .vscode
 .vscode/*
+docs
+docs/*

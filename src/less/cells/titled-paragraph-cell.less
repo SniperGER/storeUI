@@ -44,4 +44,48 @@
 			margin-top: 0;
 		}
 	}
+	
+	.separator-view {
+		position: absolute;
+		left: 20px;
+		right: 20px;
+		bottom: 0;
+		height: 1px;
+		background-color: var(--cell-separator);
+		
+		.separatorPosition();
+	}
+	
+	& + &:last-of-type {
+		.separator-view {
+			display: none;
+		}
+	}
+	
+	&.detail-styling {
+		padding-top: 16px;
+		padding-bottom: 20px;
+
+		@media all and (min-width: 767px) {
+			max-width: 672px;
+			margin: 0 auto;
+		}
+		
+		.row {
+			position: static;
+			width: auto;
+			display: flex;
+			text-align: initial;
+			margin-bottom: 2px;
+		}
+		
+		p.primary-subtitle {
+			font-weight: 500;
+			color: #000;
+		}
+		
+		.expandable-text-view {
+			max-width: initial;
+		}
+	}
 }

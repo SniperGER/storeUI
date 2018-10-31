@@ -17,7 +17,11 @@
 		
 		p.title-label {
 			font-weight: 500;
-			max-width: 50%;
+			flex: 1;
+			margin-right: 10px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 		
 		p.date-label {
@@ -28,8 +32,12 @@
 		
 		p.author-label {
 			color: #AAAAAA;
-			max-width: 50%;
 			text-align: right;
+			flex: 1;
+			margin-left: 10px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 		
 		.review-rating-view {
@@ -42,7 +50,11 @@
 				height: 12px;
 				background-position: center;
 				background-repeat: no-repeat;
-				.encoded-svg-background("<svg width='12px' height='11px' viewBox='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><polygon points='6 9 2.47328849 10.854102 3.14683045 6.92705098 0.293660902 4.14589803 4.23664424 3.57294902 6 0 7.76335576 3.57294902 11.7063391 4.14589803 8.85316955 6.92705098 9.52671151 10.854102' fill='#FE8207' /></svg>");
+				.encoded-svg-background("<svg width='12px' height='12px' viewBox='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><polygon points='6 9 2.47328849 10.854102 3.14683045 6.92705098 0.293660902 4.14589803 4.23664424 3.57294902 6 0 7.76335576 3.57294902 11.7063391 4.14589803 8.85316955 6.92705098 9.52671151 10.854102' fill='#FE8207' /></svg>");
+				
+				&.outline {
+					.encoded-svg-background("<svg width='12px' height='12px' viewBox='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><polygon points='8.862646 9.94009423 8.31592927 6.75249103 10.6318585 4.49501793 7.431323 4.0299529 6 1.12977573 4.568677 4.0299529 1.36814147 4.49501793 3.68407073 6.75249103 3.137354 9.94009423 6 8.43511213 8.862646 9.94009423' stroke='#FE8207' fill='none' /></svg>");
+				}
 				
 				&:not(:first-child) {
 					margin-left: 3px;

@@ -20,7 +20,24 @@
 		position: absolute;
 		top: 0;
 		left: 154px;
+		right: 20px;
 		height: 68px;
+		
+		@media all and (min-width: 767px) and (orientation: portrait) {
+			right: 34px;
+		}
+		
+		@media all and (min-width: 833px) and (orientation: portrait) {
+			right: 32px;
+		}
+		
+		@media all and (min-width: 1023px) {
+			right: 52px;
+		}
+		
+		@media all and (min-width: 1365px) and (orientation: landscape) {
+			right: 51px;
+		}
 		
 		h4 {
 			font-size: 22px;
@@ -37,6 +54,7 @@
 			font-weight: 400;
 			color: #8E8E93;
 			max-height: 38px;
+			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
 		}

@@ -28,10 +28,30 @@
 			.separatorPosition();
 		}
 		
+		&.bottom-separator:after {
+			top: initial;
+			bottom: 0;
+		}
+		
+		&.inset {
+			width: 100%;
+			max-width: 672px;
+			margin: 0 auto;
+		}
+		
 		.title-label {
 			font-size: 22px;
 			font-weight: 600;
 			max-width: 50%; /* Rework for iPad */
+		}
+		
+		&.large-title {
+			padding-top: 4px;
+			padding-bottom: 8px;
+			
+			.title-label {
+				font-size: 34px;
+			}
 		}
 		
 		.header-button {
