@@ -95,3 +95,26 @@
 		}
 	}
 }
+
+.product-review-actions-cell {
+	display: flex ;
+	justify-content: space-between ;
+	width: 100%;
+	margin-top: -24px;
+	margin-bottom: 32px;
+	padding-top: 10px;
+	.padding();
+	z-index: 2;
+	
+	.review-action {
+		font-size: 17px;
+		color: var(--accent-color);
+		line-height: 20px;
+		transition: opacity .4s;
+		
+		&:active {
+			transition-duration: 0;
+			opacity: 0.22;
+		}
+	}
+}

@@ -4,6 +4,8 @@
  * Copyright © 2018 Team FESTIVAL
  */
 
+@import "_mixins";
+ 
 * {
 	margin: 0;
 	padding: 0;
@@ -29,4 +31,10 @@ a {
 	display: block;
 	text-decoration: none;
 	color: var(--accent-color);
+}
+
+.status-label {
+	color: #7F7F7F;
+	margin-bottom: 32px;
+	.padding();
 }

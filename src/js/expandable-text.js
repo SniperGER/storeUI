@@ -63,7 +63,7 @@ storeUI.ExpandableText = class {
 	get text() {
 		let expandableText = this;
 		
-		if (expandableText.params.hideEmptyLines && !expandableText._expanded) {
+		if (expandableText.params.hideEmptyLines && !expandableText.params.startExpanded && !expandableText._expanded) {
 			return expandableText._rawText.replace(/\<br\>\<br\>/g, "<br>");
 		} else {
 			return expandableText._rawText;
