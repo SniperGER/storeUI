@@ -42,7 +42,7 @@
 		.title-label {
 			font-size: 22px;
 			font-weight: 600;
-			max-width: 50%; /* Rework for iPad */
+			// max-width: 50%; /* Rework for iPad */
 		}
 		
 		&.large-title {
@@ -51,6 +51,7 @@
 			
 			.title-label {
 				font-size: 34px;
+				max-width: initial;
 			}
 		}
 		
@@ -60,7 +61,8 @@
 			color: var(--accent-color);
 			transition: opacity .4s;
 			max-width: 50%;
-			margin-left: auto;
+			margin-left: 20px;
+			white-space: nowrap;
 			
 			&:active {
 				transition-duration: 0;

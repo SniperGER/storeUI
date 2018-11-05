@@ -4,6 +4,7 @@ const lessFiles = [
 	"src/less/button.less",
 	"src/less/artwork-view.less",
 	"src/less/expandable-text.less",
+	"src/less/navigation-bar.less",
 	
 	"src/less/cells/editorial-card.less",
 	"src/less/cells/small-lockup-cell.less",
@@ -30,6 +31,7 @@ const jsFiles = [
 	"src/js/collection-view.js",
 	"src/js/expandable-text.js",
 	"src/js/annotation-cell.js",
+	"src/js/navigation-bar.js"
 ]
 
 module.exports = function(grunt) {

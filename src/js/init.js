@@ -1,6 +1,12 @@
 		app.init = () => {
 			console.info(storeUI.buildString);
 			
+			// Navigation Bars
+			app.navigationBars = [];
+			document.querySelectorAll("div.navigation-bar").forEach(navBar => {
+				app.navigationBars.push(new storeUI.NavigationBar(navBar));
+			});
+			
 			// Collection Views
 			app.collectionViews = [];
 			document.querySelectorAll(".horizontal-collection-view-cell, .product-media-cell").forEach(view => {
