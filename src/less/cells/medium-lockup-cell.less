@@ -23,17 +23,7 @@
 		}
 	}
 	
-	&:nth-child(2n) {
-		height: 88px;
-		
-		@media all and (min-width: 767px) {
-			height: 105px;
-		}
-		
-		&:after {
-			display: none;
-		}
-	}
+	
 	
 	.artwork-view {
 		width: 88px;
@@ -91,6 +81,20 @@
 		@media all and (min-width: 767px) {
 			top: 75px;
 			left: 120px;
+		}
+	}
+}
+
+.swiper-wrapper .medium-lockup-cell:nth-child(2n) {
+	&:nth-child(2n) {
+		height: 88px;
+		
+		@media all and (min-width: 767px) {
+			height: 105px;
+		}
+		
+		&:after {
+			display: none;
 		}
 	}
 }

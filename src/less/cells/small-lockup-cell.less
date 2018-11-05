@@ -14,14 +14,6 @@
 		background-color: #CDCED3;
 	}
 	
-	&:nth-child(3n) {
-		height: 62px;
-		
-		&:after {
-			display: none;
-		}
-	}
-	
 	.artwork-view {
 		width: 62px;
 		height: 62px;
@@ -81,5 +73,13 @@
 		.border-view {
 			border-radius: 31px;
 		}
+	}
+}
+
+.swiper-wrapper .small-lockup-cell:nth-child(3n) {
+	height: 62px;
+		
+	&:after {
+		display: none;
 	}
 }
