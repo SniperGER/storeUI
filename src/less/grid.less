@@ -8,6 +8,8 @@
 		
 		&.column-@{i} {
 			width: ~"@{width}%";
+			min-width: ~"@{width}%";
+			max-width: ~"@{width}%";
 		}
 		
 		&.column-offset-@{i} {
@@ -27,6 +29,8 @@
 		
 		&.@{className}-@{i} {
 			width: ~"@{width}%";
+			min-width: ~"@{width}%";
+			max-width: ~"@{width}%";
 		}
 		
 		&.@{className}-offset-@{i} {
@@ -65,6 +69,7 @@
 		.make-column();
 		
 		@media all and (min-width: 576px) {
+			min-width: initial !important;
 			.make-column(small);
 		}
 		

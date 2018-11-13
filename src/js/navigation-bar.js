@@ -12,6 +12,7 @@ storeUI.NavigationBar = class {
 		// navigationBar.largeTitleView.className = "navigation-bar-large-title-view";
 		// navigationBar.container.appendChild(navigationBar.largeTitleView);
 		
+		navigationBar.largeTitleAnimationWrapper = navigationBar.largeTitleView.querySelector(".animation-wrapper");
 		navigationBar.largeTitleLabel = navigationBar.largeTitleView.querySelector(".navigation-bar-title");
 		// navigationBar.largeTitleLabel.className = "navigation-bar-title";
 		// navigationBar.largeTitleLabel.innerHTML = navigationBar.params.title;
@@ -42,7 +43,7 @@ storeUI.NavigationBar = class {
 				
 				navigationBar.container.style.transform = `translate3d(0, -${document.body.scrollTop}px, 0)`;
 				navigationBar.largeTitleView.style.transform = `translate3d(0, ${document.body.scrollTop}px, 0)`;
-				navigationBar.largeTitleLabel.style.transform = `translate3d(0, -${document.body.scrollTop}px, 0)`;
+				navigationBar.largeTitleAnimationWrapper.style.transform = `translate3d(0, -${document.body.scrollTop}px, 0)`;
 				navigationBar.contentView.style.transform = `translate3d(0, ${document.body.scrollTop}px, 0)`;
 			} else if (document.body.scrollTop < 0) {
 				
@@ -54,7 +55,7 @@ storeUI.NavigationBar = class {
 		
 				navigationBar.container.style.transform = `translate3d(0, -${navigationBar._scrollHeight}px, 0)`;
 				navigationBar.largeTitleView.style.transform = `translate3d(0, ${navigationBar._scrollHeight}px, 0)`;
-				navigationBar.largeTitleLabel.style.transform = `translate3d(0, -${navigationBar._scrollHeight}px, 0)`;
+				navigationBar.largeTitleAnimationWrapper.style.transform = `translate3d(0, -${navigationBar._scrollHeight}px, 0)`;
 				navigationBar.contentView.style.transform = `translate3d(0, ${navigationBar._scrollHeight}px, 0)`;
 			}
 		});
@@ -67,7 +68,7 @@ storeUI.NavigationBar = class {
 	
 			navigationBar.container.style.transform = `translate3d(0, -52px, 0)`;
 			navigationBar.largeTitleView.style.transform = `translate3d(0, 52px, 0)`;
-			navigationBar.largeTitleLabel.style.transform = `translate3d(0, -52px, 0)`;
+			navigationBar.largeTitleAnimationWrapper.style.transform = `translate3d(0, -52px, 0)`;
 			navigationBar.contentView.style.transform = `translate3d(0, 52px, 0)`;
 		}
 	}

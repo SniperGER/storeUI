@@ -1,3 +1,21 @@
+.editorial-card-collection-cell:not(.swiper-container-horizontal) .swiper-wrapper {
+	.editorial-card {
+		margin-right: 10px;
+		
+		@media all and (min-width: 767px) {
+			margin-right: 20px;
+		}
+		
+		@media all and (min-width: 833px) {
+			margin-right: 22px;
+		}
+		
+		@media all and (min-width: 1024px) {
+			margin-right: 30px;
+		}
+	}
+}
+
 .editorial-card {
 	// height: 335px;
 	padding: 10px 0 32px;
@@ -22,6 +40,13 @@
 		line-height: 26px;
 		color: #8E8E93;
 		margin-bottom: 10px;
+	}
+	
+	.title-label,
+	.subtitle-label {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 	
 	.artwork-view {

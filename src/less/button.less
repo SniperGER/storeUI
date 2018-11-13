@@ -32,28 +32,31 @@ button {
 			opacity: 0.56;
 		}
 	}
+}
+
+.titled-button {
+	display: block;
+	// width: 100%;
+	flex: 1;
+	border-radius: 10px;
+	font-size: 17px;
+	font-weight: 500;
+	padding: 11px 0;
+	color: var(--accent-color);
+	background-color: #F0F0F7;
+	transition: color .4s;
+	text-align: center;
 	
-	&.titled-button {
-		width: 100%;
-		border-radius: 10px;
-		font-size: 17px;
-		font-weight: 500;
-		padding: 11px 0;
-		color: var(--accent-color);
-		background-color: #F0F0F7;
-		transition: color .4s;
-		
-		// & + & {
-		// 	margin-top: 10px;
-		// }
-		
-		&:active {
-			color: fade(#007AFF, 22%);
-		}
-		
-		&:disabled {
-			pointer-events: none;
-			color: #5E5F5E;
-		}
+	// & + & {
+	// 	margin-top: 10px;
+	// }
+	
+	&:active {
+		color: fade(#007AFF, 22%);
+	}
+	
+	&:disabled {
+		pointer-events: none;
+		color: #5E5F5E;
 	}
 }

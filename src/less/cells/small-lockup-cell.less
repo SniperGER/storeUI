@@ -1,3 +1,26 @@
+.small-lockup-collection-cell:not(.swiper-container-multirow) .swiper-wrapper {
+	flex-wrap: wrap;
+	flex-direction: column;
+	max-height: 218px;
+	align-content: flex-start;
+	
+	.small-lockup-cell {
+		margin-right: 10px;
+		
+		@media all and (min-width: 767px) {
+			margin-right: 20px;
+		}
+		
+		@media all and (min-width: 833px) {
+			margin-right: 22px;
+		}
+		
+		@media all and (min-width: 1024px) {
+			margin-right: 30px;
+		}
+	}
+}
+
 .small-lockup-cell {
 	position: relative;
 	display: flex;

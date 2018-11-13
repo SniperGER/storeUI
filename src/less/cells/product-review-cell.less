@@ -1,8 +1,26 @@
 @import "../_mixins";
 
-.product-review-collection {
+.product-review-collection-cell {
 	width: 100%;
 	.padding();
+	
+	&:not(.swiper-container-horizontal) {
+		.product-review-cell {
+			margin-right: 10px;
+			
+			@media all and (min-width: 767px) {
+				margin-right: 20px;
+			}
+			
+			@media all and (min-width: 833px) {
+				margin-right: 22px;
+			}
+			
+			@media all and (min-width: 1024px) {
+				margin-right: 30px;
+			}
+		}
+	}
 	
 	.product-review-cell {
 		position: relative;
@@ -89,8 +107,43 @@
 			justify-content: space-between;
 			
 			.product-review-cell {
-				width: calc(~"50% - 10px");
 				min-height: 220px;
+			}
+		}
+		
+		@media all and (min-width: 767px) and (orientation: portrait) {
+			.product-review-cell {
+				width: calc(~"50% - 10px");
+			}
+		}
+		
+		@media all and (min-width: 833px) and (orientation: portrait) {
+			.product-review-cell {
+				width: calc(~"50% - 11px");
+			}
+		}
+		
+		@media all and (min-width: 1023px) and (orientation: portrait) {
+			.product-review-cell {
+				width: calc(~"50% - 15px");
+			}
+		}
+		
+		@media all and (min-width: 1023px) and (orientation: landscape) {
+			.product-review-cell {
+				width: calc(~"50% - 15px");
+			}
+		}
+		
+		@media all and (min-width: 1111px) and (orientation: landscape) {
+			.product-review-cell {
+				width: calc(~"50% - 16px");
+			}
+		}
+		
+		@media all and (min-width: 1365px) and (orientation: landscape) {
+			.product-review-cell {
+				width: calc(~"50% - 12px");
 			}
 		}
 	}
