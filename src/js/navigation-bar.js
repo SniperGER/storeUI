@@ -41,19 +41,37 @@ storeUI.NavigationBar = class {
 				navigationBar.largeTitleView.classList.remove("invisible");
 				navigationBar.contentView.classList.add("invisible");
 				
+				navigationBar.container.style.height = `${96}px`;
 				navigationBar.container.style.transform = `translate3d(0, -${document.body.scrollTop}px, 0)`;
+				navigationBar.largeTitleLabel.style.transform = ``;
 				navigationBar.largeTitleView.style.transform = `translate3d(0, ${document.body.scrollTop}px, 0)`;
 				navigationBar.largeTitleAnimationWrapper.style.transform = `translate3d(0, -${document.body.scrollTop}px, 0)`;
 				navigationBar.contentView.style.transform = `translate3d(0, ${document.body.scrollTop}px, 0)`;
 			} else if (document.body.scrollTop < 0) {
+				navigationBar.container.classList.add("no-separator");
+				navigationBar.largeTitleView.classList.remove("invisible");
+				navigationBar.contentView.classList.add("invisible");
 				
+				navigationBar.container.style.height = `${96 - document.body.scrollTop}px`;
+				
+				if (document.body.scrollTop >= -84) {
+					navigationBar.largeTitleLabel.style.transform = `scale(${1 + (0.1 * (document.body.scrollTop / -84))})`;
+				} else {
+					navigationBar.largeTitleLabel.style.transform = `scale(1.1)`;
+				}
+				
+				navigationBar.largeTitleView.style.transform = `translate3d(0, ${-document.body.scrollTop}px, 0)`;
+				navigationBar.largeTitleAnimationWrapper.style.transform = `translate3d(0, 0, 0)`;
+				navigationBar.contentView.style.transform = `translate3d(0, 0, 0)`;
 			} else if (document.body.scrollTop > navigationBar._scrollHeight) {
 				navigationBar.container.classList.remove("no-separator");
 				navigationBar.largeTitleView.classList.add("invisible");
 				navigationBar.contentView.classList.remove("hidden");
 				navigationBar.contentView.classList.remove("invisible");
 		
+				navigationBar.container.style.height = `${96}px`;
 				navigationBar.container.style.transform = `translate3d(0, -${navigationBar._scrollHeight}px, 0)`;
+				navigationBar.largeTitleLabel.style.transform = ``;
 				navigationBar.largeTitleView.style.transform = `translate3d(0, ${navigationBar._scrollHeight}px, 0)`;
 				navigationBar.largeTitleAnimationWrapper.style.transform = `translate3d(0, -${navigationBar._scrollHeight}px, 0)`;
 				navigationBar.contentView.style.transform = `translate3d(0, ${navigationBar._scrollHeight}px, 0)`;
