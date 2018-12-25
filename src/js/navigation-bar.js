@@ -15,7 +15,7 @@ storeUI.NavigationBar = class {
 		navigationBar.largeTitleAnimationWrapper = navigationBar.largeTitleView.querySelector(".animation-wrapper");
 		navigationBar.largeTitleLabel = navigationBar.largeTitleView.querySelector(".navigation-bar-title");
 		// navigationBar.largeTitleLabel.className = "navigation-bar-title";
-		// navigationBar.largeTitleLabel.innerHTML = navigationBar.params.title;
+		navigationBar.largeTitleLabel.innerHTML = navigationBar.params.title;
 		// navigationBar.largeTitleView.appendChild(navigationBar.largeTitleLabel);
 		
 		navigationBar.contentView = navigationBar.container.querySelector(".navigation-bar-content-view");
@@ -53,6 +53,7 @@ storeUI.NavigationBar = class {
 				navigationBar.contentView.classList.add("invisible");
 				
 				navigationBar.container.style.height = `${96 - document.body.scrollTop}px`;
+				navigationBar.container.style.transform = `translate3d(0, 0, 0)`;
 				
 				if (document.body.scrollTop >= -84) {
 					navigationBar.largeTitleLabel.style.transform = `scale(${1 + (0.1 * (document.body.scrollTop / -84))})`;
